@@ -1,0 +1,83 @@
+.form {
+	& &__section {
+		display: flex;
+		align-items: flex-end;
+		width: 100%;
+		margin-top: 26px;
+		margin-bottom: 30px;
+	}
+	& &__input-wrapper {
+		width: 33.3333333%;
+		padding-right: 15px;
+	}
+	& &__label {
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 15px;
+		display: inline-block;
+		margin-bottom: 8px;
+	}
+	& &__input {
+		font-family: 'Montserrat';
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 17px;
+		width: 100%;
+		padding-top: 13px;
+		padding-right: 15px;
+		padding-bottom: 15px;
+		padding-left: 15px;
+		color: #565656;
+		border: 1px solid #d5d5d5;
+	}
+	& &__button {
+		align-self: end;
+		width: 100%;
+	}
+}
+
+.check {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 17px;
+	display: flex;
+	align-items: center;
+	& &__pic {
+		position: relative;
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		margin-right: 16px;
+		border: 1px solid #d5d5d5;
+	}
+	& &__icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 1px;
+		height: 1px;
+		transition: all .3s cubic-bezier(.17,.67,.54,1.54);
+		transform: translate(-50%, -50%);
+		opacity: 1;
+	}
+}
+
+.check__input:checked + .check__pic .check__icon {
+	width: 20px;
+	height: 20px;
+	animation: checked .3s cubic-bezier(.17,.67,.54,1.54);
+	opacity: 1;
+}
+
+@keyframes checked {
+	0% {
+		width: 1px;
+		height: 1px;
+		opacity: 0;
+	}
+	100% {
+		width: 20px;
+		height: 20px;
+		opacity: 1;
+	}
+}

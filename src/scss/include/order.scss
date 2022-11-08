@@ -1,0 +1,15 @@
+.order {
+	margin-bottom: 100px;
+	& &__container {
+		padding-top: 49px;
+		padding-bottom: 13px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
+	}
+	& &__heading {
+		margin-bottom: 26px;
+	}
+	& &__form {
+		width: 76.9%;
+		margin-left: 8.6%;
+	}
+}

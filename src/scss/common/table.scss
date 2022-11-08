@@ -1,0 +1,55 @@
+.table {
+	min-width: 100%;
+	border-collapse: collapse;
+	& &__header {
+		color: #fff;
+		background-color: $second-color;
+	}
+	& &__empty-row {
+		height: 20px;
+		border: none;
+	}
+
+	& &__col {
+		font-size: 13px;
+		font-weight: 600;
+		line-height: 16px;
+		padding-top: 15.5px;
+		padding-bottom: 15.5px;
+		padding-left: 30px;
+		text-align: left;
+		vertical-align: top;
+		border: 1px solid #e7e7e7;
+		&--main-color {
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 29px;
+			color: #fff;
+			background-color: $main-color;
+		}
+		&--grade {
+			width: 14.5%;
+			padding-left: 20px;
+		}
+		&--class {
+			width: 25%;
+			border-right: none;
+		}
+		&--brand {
+			width: 25%;
+			border-right: none;
+		}
+		&--cash {
+			width: 17%;
+			border-left: none;
+			&:not(:last-child) {
+				border-right: none;
+			}
+		}
+	}
+	& &__head-col {
+		padding-top: 19px;
+		padding-bottom: 21px;
+		border: none;
+	}
+}
