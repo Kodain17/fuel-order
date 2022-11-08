@@ -1,7 +1,7 @@
 {
-  "name": "e-shop",
+  "name": "fuel-order",
   "version": "1.0.0",
-  "description": "internet-shop",
+  "description": "task",
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {

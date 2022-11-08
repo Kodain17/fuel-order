@@ -1,0 +1,86 @@
+.header {
+	position: relative;
+	width: 100%;
+	& &__top-bar {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		transition: all 0.5s ease;
+	}
+	& &__logo {
+		align-self: flex-start;
+		padding-top: 8px;
+	}
+	& &__nav {
+		background-color: $grey-color;
+	}
+	& &__inner {
+		display: flex;
+		align-items: center;
+		flex-grow: 1;
+		justify-content: space-between;
+		transition: all 0.5s ease;
+		&--right{
+			flex-grow: 0;
+			min-width: 33.3333%;
+			padding-left: 20px;
+		}
+	}
+	& &__phone {
+		font-size: 18px;
+		font-weight: 600;
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding-right: $gutter-x;
+		padding-left: $gutter-x;
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+	& &__phone-icon {
+		position: absolute;
+		top: 50%;
+		left: -17px;
+		transform: translateY(-50%);
+	}
+	& &__buttons {
+		display: flex;
+		width: 100%;
+		min-width: 352px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+	& &__button {
+		width: 50%;
+	}
+}
+
+@media (max-width: $media-laptop) {
+	.header{
+		& &__top-bar{
+			flex-wrap: wrap;
+		}
+	}
+}
+
+@media (max-width: 890px) {
+	.header{
+		& &__top-bar{
+			flex-wrap: wrap;
+		}
+		& &__inner{
+			width: 100%;
+			padding: 0;
+		}
+		& &__buttons{
+			width: 50%;
+			min-width: auto;
+		}
+	}
+}
+
+@media (max-width: $media-mobile) {
+	.header{
+		
+	}
+}

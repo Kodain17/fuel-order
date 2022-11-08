@@ -1,4 +1,96 @@
-body{
-	font-size: 20px;
-	color: green;
+ *{
+ 	box-sizing: border-box;
+ }
+
+body {
+	font-family: $main-font, Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1 {
+	font-size: 48px;
+	font-weight: 700;
+}
+h2 {
+	font-size: 36px;
+	font-weight: 700;
+}
+h3 {
+	font-size: 21px;
+	font-weight: 500;
+}
+
+.container {
+	width: 100%;
+	max-width: 1120px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-left: $a-gutter-x;
+	margin-right: $a-gutter-x;
+}
+
+.button {
+	font-family: inherit;
+	font-size: 13px;
+	font-weight: 600;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 14px;
+	cursor: pointer;
+	user-select: none;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	color: #fff;
+	border: 1px solid $main-color;
+	background-color: $main-color;
+	transition: all 0.5s ease;
+	& &__icon{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 15px;
+		fill: #ffffff;
+	}
+	&:hover{
+		background-color: #ffffff;
+		color: $main-color;
+	}
+	&:hover &__icon{
+		fill: $main-color;
+	}
+}
+
+.button--icon{
+	padding-left: 46px;
+}
+
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+	fill: #000;
+}
+
+@media (max-width: 1120px){
+	.container{
+		max-width: 95%;
+		padding-right: $gutter-x;
+		padding-left: $gutter-x;
+	}
 }

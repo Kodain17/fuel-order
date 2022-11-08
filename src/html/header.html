@@ -1,3 +1,90 @@
-<header>
-	<div></div>
+<header class="header">
+	<div class="container">
+		<div class="header__top-bar">
+			<div class="header__inner header__inner--left">
+				<div class="logo header__logo">
+					<picture>
+						<source srcset="img/logo__x2.webp 2x, img/logo.webp 1x" type="image/webp" />
+						<img src="img/logo.png" srcset="img/logo__x2.png 2x" alt="Логотип" />
+					</picture>
+				</div>
+				<div class="header__phone">
+					<svg class="icon header__phone-icon" aria-hidden="true" width="20" height="20">
+						<use xlink:href="img/sprite.svg#phone-black"></use>
+					</svg>
+					<a href="tel:+74951278280">8 (495) 127-82-80</a>
+				</div>
+			</div>
+			<div class="header__inner header__inner--right">
+				<div role="button" class="menu-toggle" tabindex="0">
+						<span></span>
+					</div>
+				<div class="header__buttons">
+					<button class="button header__button">Напишите нам</button>
+					<a href="#" class="button button--icon header__button">
+						<svg class="button__icon" aria-hidden="true" width="20" height="20">
+							<use xlink:href="img/sprite.svg#user"></use>
+						</svg> Личный кабинет </a>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header__nav nav-container ">
+		<div class="container">
+			<nav class="main-nav">
+				<div role="button" class="menu-toggle menu-toggle--close" tabindex="0">
+					<span></span>
+				</div>
+				<ul class="main-nav__list">
+					<li class="main-nav__item">
+						<a href="#" class="main-nav__link">Доставка топлива</a>
+					</li>
+					<li class="main-nav__item sub-menu">
+						<a href="#" class="main-nav__link">Топливные карты</a>
+						<ul class="sub-menu__list">
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Link</a>
+							</li>
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Link</a>
+							</li>
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Very long Link title</a>
+							</li>
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Link</a>
+							</li>
+						</ul>
+					</li>
+					<li class="main-nav__item sub-menu">
+						<a href="#" class="main-nav__link">АЗС</a>
+						<ul class="sub-menu__list">
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Link</a>
+							</li>
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Very long Link title</a>
+							</li>
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Link</a>
+							</li>
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Link</a>
+							</li>
+						</ul>
+					</li>
+					<li class="main-nav__item">
+						<a href="#" class="main-nav__link">Цены на топливо</a>
+					</li>
+					<li class="main-nav__item">
+						<a href="#" class="main-nav__link">О компании</a>
+					</li>
+					<li class="main-nav__item">
+						<a href="#" class="main-nav__link">Контакты</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
 </header>
