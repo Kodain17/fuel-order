@@ -1,3 +1,12 @@
 .fuel-price{
-	
+	margin-bottom: 100px;
+}
+
+@media (max-width: 670px){
+	.fuel-price{
+		& &__table{
+			overflow: auto;
+			position: relative;
+		}
+	}
 }

@@ -52,6 +52,7 @@
 	}
 	& &__button {
 		width: 50%;
+		min-width: auto;
 	}
 }
 
@@ -76,6 +77,14 @@
 		& &__buttons{
 			width: 50%;
 			min-width: auto;
+		}
+	}
+}
+
+@media (max-width: 670px){
+	.header{
+		& &__buttons{
+			width: 60%;
 		}
 	}
 }

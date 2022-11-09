@@ -71,7 +71,7 @@
 	height: 0;
 	padding: 5px;
 	border: 5px solid $main-color;
-	transition: all 0.5s ease;
+	transition: $transition-cubiec;
 	opacity: 0;
 	display: flex;
 	flex-direction: column;
@@ -111,8 +111,10 @@
 	}
 }
 
-.sub-menu--open{
-
+.nav-container--show{
+	right: 0;
+	left: auto;
+	visibility: visible;
 }
 
 @keyframes sub-menu-show {
@@ -136,18 +138,22 @@
 }
 
 @media (max-width: 890px) {
-	.nav-container{
+	.nav-container{	
+		visibility: hidden;
+		opacity: 0;
 		min-height: 100%;
 		position: fixed;
 		top: 0;
-		right: auto;
-		left: 100%;
+		right: 0;
 		width: 95%;
 		max-width: 460px;
-		transition: all 0.5s ease;
-		&--open{
-			left: auto;
-			right: 0;
+		transition: $transition-cubiec;
+		z-index: 1000;
+		transform: translateX(100%);
+		&--show{
+			opacity: 1;
+			visibility: visible;
+			transform: none;
 		}
 	}
 	.main-nav{
@@ -169,4 +175,15 @@
 		width: 46px;
 		height: 46px;
 	}
+}
+
+@keyframes showNavbar {
+	0%{
+		ransform: translateX(100%);
+	}
+	100%{
+		visibility: visible;
+		transform: translateX(0);	
+	}
+	
 }

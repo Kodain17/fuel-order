@@ -1,0 +1,56 @@
+.workflow {
+	margin-bottom: 100px;
+	& &__container {
+		display: flex;
+		margin-right: $a-gutter-x;
+		margin-left: $a-gutter-x;
+	}
+	& &__inner {
+		width: 33.3333%;
+		padding-right: $gutter-x;
+		padding-left: $gutter-x;
+	}
+	& &__content {
+		width: 100%;
+		height: 100%;
+		padding: 30px;
+		padding-bottom: 15px;
+		color: #fff;
+		background-color: $second-color;
+	}
+	& &__top-bar {
+		display: flex;
+		justify-content: space-between;
+	}
+	& &__time {
+		font-size: 15px;
+		font-weight: 600;
+		line-height: 18px;
+		display: block;
+		margin-bottom: 16px;
+	}
+	& &__arrow-icon{
+		width: 60px;
+		height: 16px;
+	}
+	& &__title {
+		font-size: 21px;
+		font-weight: 500;
+		line-height: 26px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	& &__body{
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 140%;
+		margin-top: 5px;
+		margin-bottom: 16px;
+	}
+	& &__correction{
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 16.8px;
+		margin-bottom: 0;
+	}
+}

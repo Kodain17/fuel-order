@@ -1,0 +1,67 @@
+<section class="counting">
+	<div class="container">
+		<h2 class="counting__header">Топливо с доставкой</h2>
+		<div class="counting__inner">
+			<form class="counting__form form">
+				<div class="form__fields counting__form-fields">
+					<div class="form__input-wrapper">
+						<label class="form__label">Вид топлива</label>
+						<select class="form__select">
+							<option selected="">ДТ</option>
+							<option value="1">АИ-95</option>
+							<option value="2">АИ-93</option>
+							<option value="3">АИ-80</option>
+						</select>
+					</div>
+					<div class="form__input-wrapper slider">
+						<label for="volume" class="form__label slider__lable" id="fuel-volume">Объем топлива</label>
+						<input type="text" name="volume" class="form__input slider__value" value="1000 литров">
+						<div class="slider__range" role="slider" tabindex="0" aria-valuemin="0" aria-valuenow="1000" aria-valuemax="5000" aria-labelledby="fuel-volume">
+							<span class="slider__control"></span>
+						</div>
+					</div>
+					<div class="form__input-wrapper">
+						<label for="location" class="form__label">Место доставки</label>
+						<input type="text" name="location" class="form__input" placeholder="Укажите место">
+					</div>
+					<div class="form__input-wrapper">
+						<label for="name" class="form__label">Ваше имя</label>
+						<input type="text" name="name" class="form__input">
+					</div>
+					<div class="form__input-wrapper">
+						<label for="tel" class="form__label">Номер телефона</label>
+						<input type="tel" name="tel" class="form__input inputmasked" placeholder="+7(___) ___-__-__">
+					</div>
+				</div>
+				<div class="form__result counting__result">
+					<div class="form__table">
+						<h3 class="form__table-title"> Итого </h3>
+						<div class="form__table-row">
+							<div class="form__table-col"> Стоимость топлива </div>
+							<div class="form__table-col">
+								<span> 77 350.00 ₽ </span>
+							</div>
+						</div>
+						<div class="form__table-row">
+							<div class="form__table-col"> Цена за литр: <p class="form__correction"> Цена и стоимость указаны ориентировочно. Точные цену и стоимость собщит наш менеджер при подтверждении заявки. </p>
+							</div>
+							<div class="form__table-col">
+								<span> 45.50 ₽</span>
+							</div>
+						</div>
+						<div class="form__table-row">
+							<div class="form__table-col"> Выгода: <p class="form__correction"> При цене на АЗС 49.59 ₽ за литр, цены актуальны на 23.11.2020 г. </p>
+							</div>
+							<div class="form__table-col">
+								<span class="form__count"> 6 953.00 ₽</span>
+							</div>
+						</div>
+						<div class="form__table-row">
+							<button class="button form__table-button">Заказать топливо</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

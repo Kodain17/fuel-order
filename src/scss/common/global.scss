@@ -15,6 +15,14 @@ a {
 	color: inherit;
 }
 
+.link{
+	color: $main-color;
+	transition: color 0.3s cubic-bezier(.47,.38,.83,.67);
+	&:hover{
+		color: $second-color;
+	}
+}
+
 h1 {
 	font-size: 48px;
 	font-weight: 700;
@@ -51,6 +59,7 @@ h3 {
 }
 
 .button {
+	min-width: 258px;
 	font-family: inherit;
 	font-size: 13px;
 	font-weight: 600;
@@ -61,7 +70,7 @@ h3 {
 	padding: 14px;
 	cursor: pointer;
 	user-select: none;
-	transition: all .5s ease;
+	transition: $transition-cubiec;
 	text-align: center;
 	vertical-align: middle;
 	white-space: nowrap;
@@ -94,6 +103,9 @@ h3 {
 	vertical-align: middle;
 
 	fill: #000;
+	&--white{
+		fill: #fff;
+	}
 }
 
 .invisible {
@@ -110,7 +122,6 @@ h3 {
 
 @media (max-width: 1120px) {
 	.container {
-		max-width: 95%;
 		padding-right: $gutter-x;
 		padding-left: $gutter-x;
 	}
