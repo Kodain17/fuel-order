@@ -28,7 +28,7 @@ function watcher() {
 };
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 
-const mainTask =  gulp.series(fonts, gulp.parallel(copy, html, css, js, images, svgSprite));
+const mainTask =  gulp.series(fonts, gulp.parallel(copy, html, css, svgSprite, js, images));
 
 const dev = gulp.series(reset, mainTask, gulp.parallel(watcher, server));
 

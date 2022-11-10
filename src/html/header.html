@@ -4,11 +4,11 @@
 			<div class="header__inner header__inner--left">
 				<div class="logo header__logo">
 					<picture>
-						<source srcset="img/logo__x2.webp 2x, img/logo.webp 1x" type="image/webp" />
-						<img src="img/logo.png" srcset="img/logo__x2.png 2x" alt="Логотип" />
+						<source srcset="img/logo__x2.webp 2x, img/logo.webp 1x" type="image/webp" sizes="220px" />
+						<img src="img/logo.png" srcset="img/logo__x2.png 2x" width="220" height="45" alt="Логотип" />
 					</picture>
 				</div>
-				<div class="header__phone">
+				<div class="header__phone phone-num">
 					<svg class="icon header__phone-icon" aria-hidden="true" width="20" height="20">
 						<use xlink:href="img/sprite.svg#phone-black"></use>
 					</svg>
@@ -17,15 +17,14 @@
 			</div>
 			<div class="header__inner header__inner--right">
 				<div role="button" class="menu-toggle" aria-label="Открыть меню" tabindex="0">
-						<span></span>
-					</div>
+					<span></span>
+				</div>
 				<div class="header__buttons">
 					<button class="button header__button">Напишите нам</button>
 					<a href="#" class="button button--icon header__button">
 						<svg class="button__icon" aria-hidden="true" width="20" height="20">
 							<use xlink:href="img/sprite.svg#user"></use>
 						</svg> Личный кабинет </a>
-					
 				</div>
 			</div>
 		</div>
@@ -33,7 +32,7 @@
 	<div class="header__nav nav-container ">
 		<div class="container">
 			<nav class="main-nav">
-				<div role="button" class="menu-toggle menu-toggle--close" ria-label="Закрыть меню" tabindex="0">
+				<div role="button" class="menu-toggle menu-toggle--close" aria-label="Закрыть меню" tabindex="0">
 					<span></span>
 				</div>
 				<ul class="main-nav__list">

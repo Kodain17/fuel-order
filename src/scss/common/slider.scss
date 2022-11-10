@@ -1,18 +1,23 @@
-.swiper-autoheight, .swiper-autoheight .swiper-slide{
+.swiper-autoheight,
+.swiper-autoheight .swiper-slide {
 	height: 100%;
 }
+
 .slider-button {
 	position: relative;
 	width: 56px;
 	height: 56px;
 	transition: $transition-cubiec;
 	border: 1px solid #d5d5d5;
+
 	&--next {
 		margin-right: 8px;
 	}
+
 	&--prev {
 		margin-left: 8px;
 	}
+
 	& &__icon {
 		position: absolute;
 		top: 50%;
@@ -20,28 +25,33 @@
 		transition: $transition-cubiec;
 
 		stroke: #000;
-		fill: rgba(0,0,0,0);
+		fill: rgba(0, 0, 0, 0);
+
 		&--next {
-			transform: translate(-50%,-50%) rotate(90deg);
+			transform: translate(-50%, -50%) rotate(90deg);
 		}
+
 		&--prev {
-			transform: translate(-50%,-50%) rotate(-90deg);
+			transform: translate(-50%, -50%) rotate(-90deg);
 		}
 	}
+
 	&:hover {
 		border-color: $main-color;
 		background-color: $main-color;
+
 		& .slider-button__icon {
 			stroke: #fff;
 		}
 	}
 }
-.slider-pagination{
+
+.slider-pagination {
 	text-align: center;
 	display: flex;
 	justify-content: center;
 
-	& &__bullet{
+	& &__bullet {
 		width: 4px;
 		height: 4px;
 		display: inline-block;
@@ -50,7 +60,8 @@
 		margin-left: 24px;
 		margin-right: 24px;
 		transition: $transition-cubiec;
-		&--active{
+
+		&--active {
 			background-color: $main-color;
 			transform: scale(2);
 		}

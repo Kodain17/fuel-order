@@ -3,19 +3,23 @@
 	padding-top: 80px;
 	padding-bottom: 80px;
 	background-color: $grey-color;
-	& &__carousel{
+
+	& &__carousel {
 		margin-right: $a-gutter-x;
 		margin-left: $a-gutter-x;
 	}
-	& &__slide{
+
+	& &__slide {
 		padding-right: $gutter-x;
 		padding-left: $gutter-x;
 	}
+
 	& &__header {
 		position: relative;
 		display: flex;
 		justify-content: space-between;
 	}
+
 	& &__slider-buttons {
 		position: absolute;
 		z-index: 100;
@@ -23,6 +27,7 @@
 		right: 0;
 		display: flex;
 	}
+
 	& &__review-body {
 		position: relative;
 		display: flex;
@@ -32,6 +37,7 @@
 		padding: 40px;
 		background-color: #fff;
 	}
+
 	& &__title {
 		font-size: 15px;
 		font-weight: 600;
@@ -39,13 +45,15 @@
 		margin-top: 0;
 		margin-bottom: 12px;
 	}
+
 	& &__title-description {
 		font-size: 12px;
 		font-weight: 500;
 		line-height: 15px;
-		max-width: 50%;
+		max-width: 55%;
 		margin: 0;
 	}
+
 	& &__content {
 		font-size: 16px;
 		font-weight: 400;
@@ -53,6 +61,7 @@
 		margin-top: 40px;
 		margin-bottom: 40px;
 	}
+
 	& &__link {
 		display: flex;
 		align-items: flex-end;
@@ -60,9 +69,22 @@
 
 		flex-grow: 1;
 	}
-	& &__button{
+
+	& &__button {
 		margin-top: 44px;
 		display: flex;
 		justify-content: center;
+	}
+}
+
+@media (max-width: $media-mobile) {
+	.reviews {
+		& &__review-body {
+			padding: 20px;
+		}
+
+		& &__title-description {
+			max-width: 100%;
+		}
 	}
 }

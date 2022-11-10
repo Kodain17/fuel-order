@@ -1,23 +1,45 @@
-.counting{
+.counting {
 	margin-bottom: 100px;
 	padding-top: 70px;
 	padding-bottom: 70px;
 	background-color: $grey-color;
-	& &__header{
+
+	& &__header {
 		margin-bottom: 32px;
 	}
-	& &__form{
+
+	& &__form {
 		display: flex;
 		justify-content: space-between;
 	}
-	& &__result{
+
+	& &__result {
 		max-width: 57%;
 		padding: 40px;
 		background-color: #ffffff;
 		box-shadow: $block-shadow;
 	}
-	& &__form-fields{
+
+	& &__form-fields {
 		width: 40%;
 		padding-right: 40px;
+	}
+}
+
+@media (max-width: $media-mobile) {
+	.counting {
+		& &__form {
+			flex-wrap: wrap;
+		}
+
+		& &__form-fields {
+			width: 100%;
+			padding-right: 0;
+		}
+
+		& &__result {
+			max-width: 100%;
+			padding: 25px;
+		}
 	}
 }

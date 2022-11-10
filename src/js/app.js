@@ -1,5 +1,4 @@
-import * as jquery3 from './jquery-3.6.1.min.js';
-import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay, Lazy } from 'swiper';
 import Inputmask from './inputmask.es6.js';
 
 //--- InputMask -----//
@@ -11,21 +10,79 @@ im.mask(selector);
 
 const toggleList = document.querySelectorAll('.menu-toggle');
 const navContainer = document.querySelector('.nav-container');
+const bodyElement = document.querySelector('body');
+const overlayElement = document.createElement('div');
+
+overlayElement.classList.add('overlay');
+
+let getOpenMenu = function(){
+	console.log('get open');
+	bodyElement.classList.add('menu-open');
+	bodyElement.insertAdjacentElement('beforeend', overlayElement);
+	overlayElement.classList.add('overlay--show');
+	overlayElement.addEventListener('click', getCloseMenu);
+	navContainer.classList.add('nav-container--show');
+}
+
+let getCloseMenu = function(){
+	navContainer.classList.remove('nav-container--show');
+	overlayElement.classList.remove('overlay--show');
+	overlayElement.removeEventListener('click', getCloseMenu);
+	overlayElement.remove();
+	bodyElement.classList.remove('menu-open');
+}
 
 let showNavbar = function(e) {
 	if (!navContainer.classList.contains('nav-container--show')) {
-		navContainer.classList.add('nav-container--show');
+		getOpenMenu();
 	} else {
-		navContainer.classList.remove('nav-container--show');
+		getCloseMenu();
 	};
 };
-console.log(toggleList);
+
 toggleList.forEach(function(i) {
-	console.log(i);
 	i.addEventListener('click', showNavbar);
 });
+// ---- Sub-mmenu show --------- //
+
+const subMenuElement = document.querySelectorAll('.sub-menu');
+let openMenuList = [];
+let subMenuChild;
 
 
+let getCloseSubMenu = function(elem){
+	this.classList.remove('sub-menu--open');
+	this.removeEventListener('click', getCloseSubMenu);
+	this.addEventListener('click', getOpenSubMenu);
+}
+
+let pushArr = function(elem){
+	openMenuList.push(elem);
+}
+
+let getOpenSubMenu = function(elem){
+	console.dir(openMenuList.length);
+	if(openMenuList.length > 0){
+		openMenuList.forEach(function(elem, i){
+			elem.classList.remove('sub-menu--open');
+			elem.removeEventListener('click', getCloseSubMenu);
+			elem.addEventListener('click', getOpenSubMenu);
+			openMenuList.splice(i, 1);
+			console.dir(openMenuList.length);
+		});
+	}
+
+	pushArr(this);
+
+	this.classList.add('sub-menu--open');
+	this.removeEventListener('click', getOpenSubMenu);
+	this.addEventListener('click', getCloseSubMenu);
+}
+
+subMenuElement.forEach(function(i) {
+	i.addEventListener('click', getOpenSubMenu);
+});
+	
 // ---- SLIDER --------- //
 const slider = document.querySelector('.slider');
 const sliderValue = slider.querySelector('.slider__value');
@@ -127,10 +184,30 @@ sliderRange.addEventListener('blur', function(evt) {
 // Swiper carousel
 
 let certificatesCarousel = new Swiper('.certificates__carousel', {
-	modules: [Navigation, Autoplay],
+	modules: [Navigation, Autoplay, Lazy],
 	loop: true,
 	slidesPerView: 4,
 	spaceBetween: 30,
+	spaceBetween: 10,
+	preloadImages: false,
+	lazy: true,
+	// Responsive breakpoints
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 20
+		},
+		// when window width is >= 480px
+		480: {
+			slidesPerView: 2,
+			spaceBetween: 30
+		},
+		768: {
+			slidesPerView: 4,
+			spaceBetween: 30
+		}
+	},
 	autoplay: {
 		delay: 2500,
 		disableOnInteraction: false,
@@ -146,16 +223,32 @@ let partnersCarousel = new Swiper('.partners__carousel', {
 	loop: true,
 	slidesPerView: 4,
 	spaceBetween: 30,
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 2,
+			spaceBetween: 20
+		},
+		// when window width is >= 480px
+		480: {
+			slidesPerView: 2,
+			spaceBetween: 30
+		},
+		768: {
+			slidesPerView: 4,
+			spaceBetween: 30
+		}
+	},
 	autoplay: {
 		delay: 2500,
 		disableOnInteraction: false,
 	},
 	pagination: {
-          el: '.slider-pagination',
-          clickable: true,
-          bulletActiveClass: 'slider-pagination__bullet--active',
-          bulletClass: 'slider-pagination__bullet'
-        }
+		el: '.slider-pagination',
+		clickable: true,
+		bulletActiveClass: 'slider-pagination__bullet--active',
+		bulletClass: 'slider-pagination__bullet'
+	}
 });
 
 let reviewsCarousel = new Swiper('.reviews__carousel', {
@@ -163,8 +256,21 @@ let reviewsCarousel = new Swiper('.reviews__carousel', {
 	loop: true,
 	slidesPerView: 2,
 	autoHeight: true,
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 20,
+			autoHeight: false,
+		},
+		// when window width is >= 480px
+		480: {
+			slidesPerView: 2,
+			spaceBetween: 30
+		}
+	},
 	autoplay: {
-		delay: 255555500,
+		delay: 55000,
 		disableOnInteraction: false,
 	},
 	navigation: {

@@ -1,11 +1,13 @@
 .certificates {
 	margin-bottom: 55px;
+
 	& &__header {
 		position: relative;
 		display: flex;
 		width: 100%;
 		margin-bottom: -25px;
 	}
+
 	& &__carousel {
 		position: relative;
 		margin-right: $a-gutter-x;
@@ -13,11 +15,13 @@
 		padding-top: 25px;
 		padding-bottom: 40px;
 	}
+
 	& &__slide {
 		width: 25%;
 		padding-right: $gutter-x;
 		padding-left: $gutter-x;
 	}
+
 	& &__slide-body {
 		width: 100%;
 		padding-top: 28px;
@@ -27,9 +31,11 @@
 		background-color: #fff;
 		box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
 	}
+
 	& &__wrapper {
 		justify-content: space-between;
 	}
+
 	& &__slider-buttons {
 		position: absolute;
 		z-index: 100;
@@ -39,4 +45,22 @@
 	}
 }
 
+@media (max-width: $media-mobile) {
+	.certificates {
+		& &__header {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
 
+		& &__slide-body {
+			max-width: 217px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		& &__slider-buttons {
+			position: relative;
+			margin-bottom: 30px;
+		}
+	}
+}

@@ -3,26 +3,31 @@
 	padding-bottom: 40px;
 	background-color: $grey-color;
 	margin-bottom: 100px;
+
 	& &__container {
 		display: flex;
 		flex-wrap: wrap;
-	margin-right: $a-gutter-x;
-	margin-left: $a-gutter-x;
+		margin-right: $a-gutter-x;
+		margin-left: $a-gutter-x;
 	}
+
 	& &__inner {
 		width: 33.3333%;
 		padding-right: $gutter-x;
 		padding-left: $gutter-x;
 		margin-bottom: 30px;
 	}
-	& &__content{
+
+	& &__content {
 		display: flex;
 		padding: 19.8px;
 		background-color: #fff;
 	}
+
 	& &__icon {
 		margin-right: 19px;
 	}
+
 	& &__title {
 		font-size: 15px;
 		font-weight: 600;
@@ -30,11 +35,36 @@
 		margin-bottom: 12px;
 		margin-top: 0;
 	}
+
 	& &__text {
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 17px;
 		color: #565656;
 		margin-bottom: 0px;
+	}
+}
+
+@media (max-width: $media-tablet) {
+	.advantages {
+		& &__container {
+			flex-wrap: wrap;
+		}
+
+		& &__inner {
+			width: 50%;
+		}
+	}
+}
+
+@media (max-width: $media-mobile) {
+	.advantages {
+		& &__container {
+			flex-wrap: wrap;
+		}
+
+		& &__inner {
+			width: 100%;
+		}
 	}
 }

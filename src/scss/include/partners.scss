@@ -1,17 +1,25 @@
-.partners{
+.partners {
 	margin-bottom: 100px;
-	& &__title{
+
+	& &__title {
 		margin-bottom: 27px;
 	}
-	& &__slider-control{
+
+	& &__slider-control {
 		width: 100%;
 		display: flex;
 		justify-content: center;
 	}
-	& &__slider-wrapper{
+
+	& &__slider-wrapper {
 		align-items: end;
 	}
-	& &__carousel{
+
+	& &__slide-body {
+		max-width: 200px;
+	}
+
+	& &__carousel {
 		margin-top: -6px;
 		padding-bottom: 45px;
 		margin-bottom: 45px;

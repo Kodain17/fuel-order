@@ -1,128 +1,188 @@
  * {
-	box-sizing: border-box;
-}
+ 	box-sizing: border-box;
+ 	outline-color: $second-color;
+ 	outline-offset: 3px;
+ }
 
-body {
-	font-family: $main-font, Verdana, Geneva, sans-serif;
-	font-size: 16px;
-	margin: 0;
-	padding: 0;
-	color: #000;
-}
+ body {
+ 	font-family: $main-font, Verdana, Geneva, sans-serif;
+ 	font-size: 16px;
+ 	margin: 0;
+ 	padding: 0;
+ 	color: #000;
+ }
 
-a {
-	text-decoration: none;
-	color: inherit;
-}
+ .menu-open {
+ 	overflow: hidden !important;
+ }
 
-.link{
-	color: $main-color;
-	transition: color 0.3s cubic-bezier(.47,.38,.83,.67);
-	&:hover{
-		color: $second-color;
-	}
-}
+ .overlay {
+ 	position: fixed;
+ 	top: 0;
+ 	left: 0;
+ 	z-index: 500;
+ 	width: 100vw;
+ 	height: 100vh;
+ 	background-color: #000;
+ 	opacity: 0;
+ 	transition: opacity .5s linear;
+ 	&--show{
+ 		opacity: 0.65;
+ 	}
+ }
 
-h1 {
-	font-size: 48px;
-	font-weight: 700;
-	margin-top: 90px;
-	margin-bottom: 48px;
-}
-h2 {
-	font-size: 36px;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 48px;
-	& span {
-		color: $main-color;
-	}
-}
-h3 {
-	font-size: 21px;
-	font-weight: 500;
-}
+ a {
+ 	text-decoration: none;
+ 	color: inherit;
+ }
 
-.container {
-	width: 100%;
-	max-width: 1120px;
-	margin-right: auto;
-	margin-left: auto;
-}
+ .link {
+ 	font-size: 13px;
+ 	font-weight: 600;
+ 	line-height: 16px;
+ 	transition: color .3s cubic-bezier(.47, .38, .83, .67);
+ 	color: $main-color;
 
-.row {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	margin-right: $a-gutter-x;
-	margin-left: $a-gutter-x;
-}
+ 	&:hover {
+ 		color: $second-color;
+ 	}
+ }
 
-.button {
-	min-width: 258px;
-	font-family: inherit;
-	font-size: 13px;
-	font-weight: 600;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 14px;
-	cursor: pointer;
-	user-select: none;
-	transition: $transition-cubiec;
-	text-align: center;
-	vertical-align: middle;
-	white-space: nowrap;
-	color: #fff;
-	border: 1px solid $main-color;
-	background-color: $main-color;
-	& &__icon {
-		position: absolute;
-		top: 50%;
-		left: 15px;
-		transform: translateY(-50%);
+ img {
+ 	width: 100%;
+ 	height: auto;
+ }
 
-		fill: #fff;
-	}
-	&:hover {
-		color: $main-color;
-		background-color: #fff;
-	}
-	&:hover &__icon {
-		fill: $main-color;
-	}
-}
+ h1 {
+ 	font-size: 48px;
+ 	font-weight: 700;
+ 	margin-top: 90px;
+ 	margin-bottom: 48px;
+ }
 
-.button--icon {
-	padding-left: 46px;
-}
+ h2 {
+ 	font-size: 36px;
+ 	font-weight: 700;
+ 	margin-top: 0;
+ 	margin-bottom: 48px;
 
-.icon {
-	display: inline-block;
-	vertical-align: middle;
+ 	& span {
+ 		color: $main-color;
+ 	}
+ }
 
-	fill: #000;
-	&--white{
-		fill: #fff;
-	}
-}
+ h3 {
+ 	font-size: 21px;
+ 	font-weight: 500;
+ }
 
-.invisible {
-	position: absolute;
-	clip: rect(0,0,0,0);
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	padding: 0;
-	border: 0;
+ .container {
+ 	width: 100%;
+ 	max-width: 1120px;
+ 	margin-right: auto;
+ 	margin-left: auto;
+ }
 
-	clip-path: inset(100%);
-}
+ .row {
+ 	display: flex;
+ 	flex-wrap: wrap;
+ 	width: 100%;
+ 	margin-right: $a-gutter-x;
+ 	margin-left: $a-gutter-x;
+ }
 
-@media (max-width: 1120px) {
-	.container {
-		padding-right: $gutter-x;
-		padding-left: $gutter-x;
-	}
-}
+ .button {
+ 	font-family: inherit;
+ 	font-size: 13px;
+ 	font-weight: 600;
+ 	position: relative;
+ 	width: 258px;
+ 	max-width: 100%;
+ 	padding: 14px;
+ 	cursor: pointer;
+ 	user-select: none;
+ 	transition: $transition-cubiec;
+ 	text-align: center;
+ 	vertical-align: middle;
+ 	white-space: nowrap;
+ 	color: #fff;
+ 	border: 1px solid $main-color;
+ 	background-color: $main-color;
+
+ 	& &__icon {
+ 		position: absolute;
+ 		top: 50%;
+ 		left: 15px;
+ 		transform: translateY(-50%);
+
+ 		fill: #fff;
+ 	}
+
+ 	&:hover {
+ 		color: $main-color;
+ 		background-color: #fff;
+ 	}
+
+ 	&:hover &__icon {
+ 		fill: $main-color;
+ 	}
+ }
+
+ .button--icon {
+ 	padding-left: 46px;
+ }
+
+ .icon {
+ 	display: inline-block;
+ 	vertical-align: middle;
+
+ 	fill: #000;
+
+ 	&--white {
+ 		fill: #fff;
+ 	}
+ }
+
+ .phone-num {
+ 	font-size: 18px;
+ 	font-weight: 600;
+ 	position: relative;
+
+ 	&--blue {
+ 		color: $main-color;
+ 	}
+ }
+
+ .invisible {
+ 	position: absolute;
+ 	clip: rect(0, 0, 0, 0);
+ 	width: 1px;
+ 	height: 1px;
+ 	margin: -1px;
+ 	padding: 0;
+ 	border: 0;
+
+ 	clip-path: inset(100%);
+ }
+
+ @media (max-width: 1120px) {
+ 	.container {
+ 		padding-right: $gutter-x;
+ 		padding-left: $gutter-x;
+ 	}
+ }
+
+ @media (max-width: $media-tablet) {}
+
+ @media (max-width: $media-mobile) {
+ 	h1 {
+ 		font-size: 36px;
+ 		margin-top: 46px;
+ 		margin-bottom: 32px;
+ 	}
+
+ 	h2 {
+ 		font-size: 26px;
+ 		margin-bottom: 32px;
+ 	}
+ }

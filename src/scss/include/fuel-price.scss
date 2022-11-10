@@ -1,12 +1,18 @@
-.fuel-price{
+.fuel-price {
 	margin-bottom: 100px;
 }
 
-@media (max-width: 670px){
-	.fuel-price{
-		& &__table{
+@media (max-width: $media-tablet) {
+	.fuel-price {
+		& &__table {
 			overflow: auto;
 			position: relative;
 		}
+	}
+}
+
+@media (max-width: $media-tablet) {
+	.fuel-price {
+		margin-bottom: 50px;
 	}
 }
